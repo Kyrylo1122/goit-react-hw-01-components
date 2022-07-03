@@ -5,6 +5,8 @@ import { Statistic } from "./Statistics/Statistics";
 import data from "./JSON/data.json";
 import { FriendList } from "./FriendList/FriendList";
 import friendsSet from "./JSON/friends.json";
+import { TransactionHistory } from "./TransactionHistory/TransactionHistory";
+import transactionsList from "./JSON/transactions.json";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
       />
       <Statistic title="Upload title" stats={data} />
       <FriendList friends={friendsSet} />
+      <TransactionHistory trans={transactionsList} />
     </>
   );
 }

@@ -42,4 +42,5 @@ export const theme = {
     round: "50%",
   },
   sizes: ["100%", "50%", "33,3%%", "25%", "20%"],
+  shadows: { normal: " 4px 3px 1px #00000039" },
 };

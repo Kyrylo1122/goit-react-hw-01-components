@@ -1,16 +1,20 @@
 import { Box } from "../Components/Box";
-import { Status } from "./FriendsList";
-const Friends = ({ friendsArr }) =>
-  friendsArr.map((e) => (
-    <Box key={e.id} display="flex" alignItems="center">
-      <Status isOnline={e.isOnline}></Status>
+import { Friends } from "./Friends";
+import PropTypes from "prop-types";
 
-      <img src={e.avatar} alt="User avatar" width="48" />
-      <p>{e.name}</p>
-    </Box>
-  ));
 export const FriendList = ({ friends }) => (
-  <Box as="ul">
+  <Box as="ul" p={0} m={-3} mt={6}>
     <Friends friendsArr={friends} />
   </Box>
 );
+
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
+    })
+  ),
+};
